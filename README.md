@@ -30,6 +30,12 @@ configs:
 
 This is a small, static release derived from a locally operated T-Pot honeypot deployment. It supports one narrow, auditable task: given a compact summary of observed honeypot behavior, determine whether the evidence meets a fixed incident-reporting threshold and name that threshold. It is not a general internet-threat corpus, a botnet-attribution dataset, a malware corpus, or evidence of production compromise.
 
+## Access the release
+
+- **Download and use the dataset:** [Hugging Face — Magnexis/tpot-evidence-lab](https://huggingface.co/datasets/Magnexis/tpot-evidence-lab)
+- **Browse the repository, documentation, and release history:** [GitLab — theworker02/tpot-evidence-lab](https://gitlab.com/theworker02/tpot-evidence-lab)
+- **Project landing page:** [T-Pot Evidence Lab on GitLab Pages](https://tpot-evidence-lab-ec5dff.gitlab.io)
+
 ## Contents
 
 - [Why this exists](#why-this-exists)

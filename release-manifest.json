@@ -142,11 +142,11 @@
       "bytes": 590
     },
     "README.md": {
-      "sha256": "1c2c458fe7ff4bf99e58454ffcefd7158ddcb239107416c95198dc32d948f0e0",
-      "bytes": 9925
+      "sha256": "e151f71199b4b2a0969786b8710107027a5203654d8703798f7ab3d66a455bbd",
+      "bytes": 10358
     },
     "release-manifest.json": {
-      "sha256": "f91629cd737be788d4c0317f2ea7a1af386472df175483f3ca01c34efc4a2c8e",
+      "sha256": "3c611dd0befdc3ce2c226ff8230fee0169657cc11ea2b6e964ff17551570e5b2",
       "bytes": 6864
     },
     "site/config.js": {
