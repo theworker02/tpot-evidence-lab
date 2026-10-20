@@ -1,0 +1,8 @@
+*.zip
+private/
+*.sqlite3
+*.db
+predictions.jsonl
+__pycache__/
+*.pyc
+

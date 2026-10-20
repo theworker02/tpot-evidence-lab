@@ -1,0 +1,62 @@
+language:
+- en
+license: cc-by-4.0
+task_categories:
+- text-classification
+- text-generation
+tags:
+- cybersecurity
+- honeypot
+- weak-supervision
+size_categories:
+- n<1K
+configs:
+- config_name: default
+  default: true
+  data_files:
+  - split: train
+    path: data/chat/train.jsonl
+  - split: validation
+    path: data/chat/validation.jsonl
+  - split: test
+    path: data/chat/test.jsonl
+- config_name: alpaca
+  data_files:
+  - split: train
+    path: data/alpaca/train.jsonl
+  - split: validation
+    path: data/alpaca/validation.jsonl
+  - split: test
+    path: data/alpaca/test.jsonl
+- config_name: sharegpt
+  data_files:
+  - split: train
+    path: data/sharegpt/train.jsonl
+  - split: validation
+    path: data/sharegpt/validation.jsonl
+  - split: test
+    path: data/sharegpt/test.jsonl
+- config_name: prompt_completion
+  data_files:
+  - split: train
+    path: data/prompt-completion/train.jsonl
+  - split: validation
+    path: data/prompt-completion/validation.jsonl
+  - split: test
+    path: data/prompt-completion/test.jsonl
+- config_name: events
+  data_files:
+  - split: train
+    path: data/events/train.jsonl
+  - split: validation
+    path: data/events/validation.jsonl
+  - split: test
+    path: data/events/test.jsonl
+- config_name: events_parquet
+  data_files:
+  - split: train
+    path: data/parquet/train.parquet
+  - split: validation
+    path: data/parquet/validation.parquet
+  - split: test
+    path: data/parquet/test.parquet

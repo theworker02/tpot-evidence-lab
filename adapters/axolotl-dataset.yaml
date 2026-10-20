@@ -1,0 +1,9 @@
+# Dataset fragment only; select model, chat template and hardware settings separately.
+datasets:
+  - path: data/chat/train.jsonl
+    type: chat_template
+    field_messages: messages
+test_datasets:
+  - path: data/chat/validation.jsonl
+    type: chat_template
+    field_messages: messages

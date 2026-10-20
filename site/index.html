@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A sanitized defensive honeypot-evidence dataset.">
+    <title>T-Pot Evidence Lab</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">MAGNEXIS · DATA RELEASE</p>
+      <h1>T-Pot Evidence Lab</h1>
+      <p class="lede">A small, sanitized honeypot-evidence dataset for defensive classification, evaluation, and local model workflows.</p>
+      <div class="actions">
+        <a id="hf" class="primary" href="#">View dataset on Hugging Face</a>
+        <a id="gitlab" href="#">Browse source on GitLab</a>
+      </div>
+      <section>
+        <h2>What’s inside</h2>
+        <ul>
+          <li>741 structured events across 126 opaque source groups</li>
+          <li>Chat, Alpaca, ShareGPT, prompt/completion, JSONL, and Parquet formats</li>
+          <li>Source-disjoint train, validation, and test splits</li>
+          <li>Local Ollama and generic Harness² evaluation bridges</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Use responsibly</h2>
+        <p>Labels are weak deterministic thresholds, not attribution or a basis for automatic enforcement. The public release removes literal IPs, credentials, payloads, captured commands, and local targets.</p>
+      </section>
+      <footer>CC BY 4.0 · Version <span id="version"></span></footer>
+    </main>
+    <script src="config.js"></script>
+    <script>
+      const config = window.TPOT_EVIDENCE_LAB;
+      document.querySelector('#hf').href = config.huggingFaceUrl;
+      document.querySelector('#gitlab').href = config.gitlabUrl;
+      document.querySelector('#version').textContent = config.version;
+    </script>
+  </body>
+</html>
+
