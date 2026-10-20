@@ -25,6 +25,10 @@
       "sha256": "c7576fd69fa436aeddc34bc8517ed9f334f26f7bfb8d759763be72de83b64ac4",
       "bytes": 1328
     },
+    "assets/tpot-evidence-lab-avatar.png": {
+      "sha256": "c49ad41a9ba4df23b10011a24634d13c4d451598d2b4120605b3bf4aeb05d769",
+      "bytes": 1161300
+    },
     "card-metadata.yaml": {
       "sha256": "178fb3032ccd077c74571da22101ab123e01f5e0982dd14ef345ed009fe20475",
       "bytes": 1500
@@ -142,12 +146,12 @@
       "bytes": 590
     },
     "README.md": {
-      "sha256": "e151f71199b4b2a0969786b8710107027a5203654d8703798f7ab3d66a455bbd",
-      "bytes": 10358
+      "sha256": "4ca7276abd8cfef3e0bc411985fc8d6a5d4dc8a28dd91232d90df7bbbc658b01",
+      "bytes": 11356
     },
     "release-manifest.json": {
-      "sha256": "3c611dd0befdc3ce2c226ff8230fee0169657cc11ea2b6e964ff17551570e5b2",
-      "bytes": 6864
+      "sha256": "95c4cd0439cebac1e34f8fb178e366a9c2a8671c5db9cce9068658ae23a9d9f5",
+      "bytes": 6865
     },
     "site/config.js": {
       "sha256": "d7b4f2499a6db448f53909b01b1d972de3a4868c613c89d70c3f51dc3527bf42",

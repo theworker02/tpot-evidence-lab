@@ -26,6 +26,18 @@ configs:
 
 # T-Pot Evidence Lab
 
+<p align="center">
+  <img src="assets/tpot-evidence-lab-avatar.png" width="164" alt="T-Pot Evidence Lab project avatar: connected evidence nodes and signal arcs">
+</p>
+
+<p align="center">
+  <a href="https://huggingface.co/datasets/Magnexis/tpot-evidence-lab"><img src="https://img.shields.io/badge/Hugging%20Face-Dataset-f9d154?logo=huggingface&logoColor=black" alt="Hugging Face Dataset"></a>
+  <a href="https://gitlab.com/theworker02/tpot-evidence-lab"><img src="https://img.shields.io/badge/GitLab-Repository-fc6d26?logo=gitlab&logoColor=white" alt="GitLab Repository"></a>
+  <a href="https://tpot-evidence-lab-ec5dff.gitlab.io"><img src="https://img.shields.io/badge/GitLab%20Pages-Live-4285f4?logo=gitlab&logoColor=white" alt="GitLab Pages"></a>
+  <a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY%204.0-6b4e9b" alt="CC BY 4.0 License"></a>
+  <img src="https://img.shields.io/badge/Release-v3.0.0-173f5f" alt="Release v3.0.0">
+</p>
+
 **A sanitized, weakly labelled honeypot-evidence dataset for defensive-security research, local model evaluation, and training-pipeline prototyping.**
 
 This is a small, static release derived from a locally operated T-Pot honeypot deployment. It supports one narrow, auditable task: given a compact summary of observed honeypot behavior, determine whether the evidence meets a fixed incident-reporting threshold and name that threshold. It is not a general internet-threat corpus, a botnet-attribution dataset, a malware corpus, or evidence of production compromise.
