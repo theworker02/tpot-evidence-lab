@@ -11,33 +11,60 @@
     <main>
       <p class="eyebrow">MAGNEXIS · DATA RELEASE</p>
       <h1>T-Pot Evidence Lab</h1>
-      <p class="lede">A small, sanitized honeypot-evidence dataset for defensive classification, evaluation, and local model workflows.</p>
+      <p class="lede">133,137 real honeypot observations. Structured for analysis, with traceable sources and a clear boundary between evidence and inference.</p>
       <div class="actions">
-        <a id="hf" class="primary" href="#">View dataset on Hugging Face</a>
-        <a id="gitlab" href="#">Browse source on GitLab</a>
+        <a id="hf" class="primary" href="https://huggingface.co/datasets/Magnexis/tpot-evidence-lab/viewer/observations">Explore the full dataset</a>
+        <a id="gitlab" href="https://gitlab.com/theworker02/tpot-evidence-lab">Source and documentation</a>
       </div>
       <section>
         <h2>What’s inside</h2>
         <ul>
-          <li>741 structured events across 126 opaque source groups</li>
+          <li>133,137 structured observations across 14 sensor types</li>
+          <li>741 original local events and 132,396 imported cloud honeynet observations</li>
           <li>Chat, Alpaca, ShareGPT, prompt/completion, JSONL, and Parquet formats</li>
-          <li>Source-disjoint train, validation, and test splits</li>
+          <li>Source-group-disjoint splits within each collection; cross-collection overlap is unknown</li>
           <li>Local Ollama and generic Harness² evaluation bridges</li>
         </ul>
       </section>
       <section>
-        <h2>Use responsibly</h2>
-        <p>Labels are weak deterministic thresholds, not attribution or a basis for automatic enforcement. The public release removes literal IPs, credentials, payloads, captured commands, and local targets.</p>
+        <p class="eyebrow">COLLECTIONS</p><h2>Two sources. Clear boundaries.</h2>
+        <div class="table-scroll"><table><thead><tr><th>Collection</th><th>Rows</th><th>Capture</th><th>License</th></tr></thead><tbody>
+          <tr><td>Magnexis local</td><td>741</td><td>October 20, 2026</td><td>CC BY 4.0</td></tr>
+          <tr><td><a href="https://zenodo.org/records/15716735">Multi-Regional Cloud Honeynet</a></td><td>132,396</td><td>June 9–11, 2025</td><td>MIT</td></tr>
+        </tbody></table></div>
+        <p class="note">Cloud source: Enrique Feito-Casares, Ismael Gómez-Talal, José Luis Rojo-Álvarez · Universidad Rey Juan Carlos. Identifiers and sensitive fields were removed; 29 identical projected rows were collapsed. Imported observations remain unlabelled.</p>
       </section>
-      <footer>CC BY 4.0 · Version <span id="version"></span></footer>
+      <section>
+        <p class="eyebrow">OBSERVATION PREVIEW</p><h2>Inspect the shape of the data.</h2>
+        <p>Up to 20 real records per collection and sensor. Filters search this bounded preview. <a href="https://huggingface.co/datasets/Magnexis/tpot-evidence-lab/viewer/observations">Explore all rows on Hugging Face.</a></p>
+        <form id="filters" role="search"><label>Search preview<input id="query" type="search" placeholder="Sensor, protocol, port, or ID"></label><label>Collection<select id="corpus"><option value="">All collections</option><option value="magnexis-local-2026">Magnexis local</option><option value="cloud-honeynet-2025">Cloud Honeynet</option></select></label><label>Sensor<select id="sensor"><option value="">All sensors</option></select></label><button type="reset">Reset</button></form>
+        <p id="status" role="status" aria-live="polite">Loading observation preview…</p>
+        <div class="table-scroll"><table><thead><tr><th>Record</th><th>UTC timestamp</th><th>Sensor</th><th>Protocol</th><th>Port</th><th>Label basis</th></tr></thead><tbody id="records"></tbody></table></div>
+        <div class="pagination"><button id="previous" disabled>Previous</button><span id="page"></span><button id="next" disabled>Next</button></div>
+        <noscript><p>Enable JavaScript for the preview or open the full tables on Hugging Face.</p></noscript>
+      </section>
+      <section>
+        <h2>Choose the right configuration</h2>
+        <p><a href="https://huggingface.co/datasets/Magnexis/tpot-evidence-lab/viewer/observations_parquet">Combined Parquet observations</a> · <a href="https://huggingface.co/datasets/Magnexis/tpot-evidence-lab/viewer/events">Original detailed events</a> · <a href="https://huggingface.co/datasets/Magnexis/tpot-evidence-lab/viewer/default">Original chat examples</a></p>
+        <pre><code>from datasets import load_dataset
+events = load_dataset("Magnexis/tpot-evidence-lab", "observations")
+print(events["train"][0])</code></pre>
+      </section>
+      <section>
+        <h2>Use responsibly</h2>
+        <p>Original labels are weak deterministic thresholds. Imported rows have no fabricated answers. Neither establishes identity, intent, compromise, or botnet membership. Addresses, locations, credentials, commands, and raw payloads are excluded, but timing may still allow linkage with upstream records.</p>
+        <p><a href="https://huggingface.co/datasets/Magnexis/tpot-evidence-lab/blob/main/docs/observations.md">Fields, methods, and limitations</a></p>
+      </section>
+      <footer>Original collection: CC BY 4.0 · Imported collection: MIT · Version <span id="version"></span></footer>
     </main>
     <script src="config.js"></script>
     <script>
       const config = window.TPOT_EVIDENCE_LAB;
-      document.querySelector('#hf').href = config.huggingFaceUrl;
+      document.querySelector('#hf').href = config.huggingFaceUrl + '/viewer/observations';
       document.querySelector('#gitlab').href = config.gitlabUrl;
       document.querySelector('#version').textContent = config.version;
     </script>
+    <script src="explorer.js"></script>
   </body>
 </html>
 
