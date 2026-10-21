@@ -15,6 +15,7 @@ size_categories:
 - 100K<n<1M
 configs:
 - config_name: observations
+  default: true
   data_files:
   - split: train
     path: data/observations/train.parquet
@@ -38,15 +39,14 @@ configs:
     path: data/viewer/evaluation/validation.parquet
   - split: test
     path: data/viewer/evaluation/test.parquet
-- config_name: default
+- config_name: chat
   data_files:
   - split: train
-    path: data/viewer/default/train.parquet
+    path: data/viewer/chat/train.parquet
   - split: validation
-    path: data/viewer/default/validation.parquet
+    path: data/viewer/chat/validation.parquet
   - split: test
-    path: data/viewer/default/test.parquet
-  default: true
+    path: data/viewer/chat/test.parquet
 - config_name: alpaca
   data_files:
   - split: train
@@ -116,7 +116,7 @@ The original supervised subset is a static release derived from a locally operat
 | **observations** (structured table) | Combined structured observations | 133,137 |
 | observations_parquet | Alias for the same observation table | 133,137 |
 | events / events_parquet | Original detailed local events and behavioral flags | 741 |
-| default / alpaca / sharegpt / prompt_completion | Alternate formats of the original instruction examples | 675 each |
+| chat / alpaca / sharegpt / prompt_completion | Alternate formats of the original instruction examples | 675 each |
 | evaluation | Original prompts with IDs and source groups; answers remain separate | 601 |
 
 All viewer configurations use Parquet for loader compatibility; canonical JSONL downloads remain in their original folders. **These formats overlap; do not add their counts together.** Evaluation prompts retain the original source-disjoint splits. Do not train on evaluation prompts or answers when reporting held-out results.
@@ -125,7 +125,7 @@ All viewer configurations use Parquet for loader compatibility; canonical JSONL 
 from datasets import load_dataset
 observations = load_dataset("Magnexis/tpot-evidence-lab", "observations")
 events = load_dataset("Magnexis/tpot-evidence-lab", "events")
-chat = load_dataset("Magnexis/tpot-evidence-lab", "default")
+chat = load_dataset("Magnexis/tpot-evidence-lab", "chat")
 print(observations["train"][0])
 ```
 
@@ -245,7 +245,7 @@ The canonical chat row is:
 
 ```python
 from datasets import load_dataset
-dataset = load_dataset("Magnexis/tpot-evidence-lab", "default")
+dataset = load_dataset("Magnexis/tpot-evidence-lab", "chat")
 print(dataset["train"][0]["messages"])
 ```
 

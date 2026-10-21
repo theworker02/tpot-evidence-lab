@@ -67,6 +67,8 @@ class ObservationTest(unittest.TestCase):
     def test_frontmatter_matches_and_preview_is_real(self):
         frontmatter = (ROOT / "README.md").read_text(encoding="utf-8").split("---", 2)[1].strip()
         self.assertEqual(frontmatter, (ROOT / "card-metadata.yaml").read_text(encoding="utf-8").strip())
+        self.assertIn("config_name: observations\n  default: true", frontmatter)
+        self.assertIn("config_name: chat", frontmatter)
         preview = json.loads((ROOT / "site/preview.json").read_text(encoding="utf-8"))
         expected = {row["id"]:row for row in preview["rows"]}
         found = {}

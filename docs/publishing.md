@@ -8,7 +8,7 @@ node tests/test_preview.cjs
 python tools/verify_release.py
 ```
 
-README front matter and `card-metadata.yaml` must agree. Choose `observations` to analyze records. The existing `default` chat configuration remains the loader default for compatibility. Preserve every original data format and retain third-party notices.
+README front matter and `card-metadata.yaml` must agree. `observations` must remain the default configuration so visitors land on the structured table. The original chat material is available as `chat`. Preserve every original data format and retain third-party notices.
 
 After approval, upload the reviewed directory to `Magnexis/tpot-evidence-lab` with `hf upload`, excluding `.git`, `__pycache__`, and `.cache`. Review the GitLab diff before committing and pushing. Its existing Pages job publishes `site/`. Do not upload source archives, private snapshots, source mappings, or reporting artifacts.
 

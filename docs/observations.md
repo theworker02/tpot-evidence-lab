@@ -1,6 +1,6 @@
 # Observation fields and source boundaries
 
-`observations` is the combined structured configuration; `observations_parquet` is an alias for the same rows and splits. All viewer configurations use Parquet to avoid mixing loader formats within one repository. Canonical JSONL downloads remain in `data/observations/` and the original format folders. Both contain 133,137 rows. The original `default` chat configuration remains available by name. Choose `observations` in the viewer; the legacy `default` chat configuration is preserved for existing loaders.
+`observations` is the combined structured default configuration; `observations_parquet` is an alias for the same rows and splits. All viewer configurations use Parquet to avoid mixing loader formats within one repository. Canonical JSONL downloads remain in `data/observations/` and the original format folders. Both contain 133,137 rows. Original messages remain under the explicit `chat` configuration.
 
 | Field | Meaning |
 | --- | --- |

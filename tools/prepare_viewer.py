@@ -12,7 +12,7 @@ for split in ('train','validation','test'):
     (root/f'evaluation/prompts/{split}.jsonl').write_text(''.join(json.dumps(t,ensure_ascii=False)+'\n' for t in tasks if t['split']==split),encoding='utf-8')
 for c in meta['configs']:
     for file in c['data_files']:
-        original_paths={'default':'data/chat','alpaca':'data/alpaca','sharegpt':'data/sharegpt',
+        original_paths={'chat':'data/chat','alpaca':'data/alpaca','sharegpt':'data/sharegpt',
                         'prompt_completion':'data/prompt-completion','evaluation':'evaluation/prompts'}
         if c['config_name'] in original_paths:
             source=root/original_paths[c['config_name']]/f"{file['split']}.jsonl"

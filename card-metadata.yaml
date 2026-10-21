@@ -14,6 +14,7 @@ size_categories:
 - 100K<n<1M
 configs:
 - config_name: observations
+  default: true
   data_files:
   - split: train
     path: data/observations/train.parquet
@@ -37,15 +38,14 @@ configs:
     path: data/viewer/evaluation/validation.parquet
   - split: test
     path: data/viewer/evaluation/test.parquet
-- config_name: default
+- config_name: chat
   data_files:
   - split: train
-    path: data/viewer/default/train.parquet
+    path: data/viewer/chat/train.parquet
   - split: validation
-    path: data/viewer/default/validation.parquet
+    path: data/viewer/chat/validation.parquet
   - split: test
-    path: data/viewer/default/test.parquet
-  default: true
+    path: data/viewer/chat/test.parquet
 - config_name: alpaca
   data_files:
   - split: train
