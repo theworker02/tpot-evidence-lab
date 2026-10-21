@@ -1,22 +1,9 @@
 # Data card
 
-## Summary
+Version 3.1.0 has 133,137 combined observations: 741 original local events and 132,396 MIT-licensed observations derived from the Multi-Regional Cloud Honeynet Dataset. There are 14 sensor types. See [source attribution](../THIRD_PARTY_NOTICES.md) and [field definitions](observations.md).
 
-T-Pot Evidence Lab v3.0.0 is a static public derivative of a local T-Pot collection. It has 741 structured events across 126 opaque source groups and 675 instruction examples. The capture interval is 2026-10-20T12:13:15Z through 2026-10-20T23:01:18Z.
+The original 675 instruction examples and 601 evaluation tasks remain unchanged. Only the original subset has deterministic collector-rule labels. Imported observations are unlabelled and do not expand the supervised task. Negative weak labels do not prove benignness; positive weak labels do not prove intent or compromise.
 
-## Labels
+Source groups are split-disjoint within each corpus, with no guarantee of independence across corpora. The imported collection is dominated by three sensors and the two captures differ in location, time, and instrumentation. Protocol/port records do not establish compromise or botnet membership. No model is trained or included.
 
-`qualifies` is a deterministic weak label. It is true only when an evidence window meets one of these fixed thresholds: five failed authentications in 180 seconds; five recognized web/Redis probes; five explicit decoy-shell commands/uploads; or five distinct honeypot TCP ports. It is not a judgment about intent, identity, ownership, compromise, or provider responsibility.
-
-## Splits
-
-Train, validation, and test splits are disjoint by opaque source group. The split process stratifies groups by whether they include a qualifying window. The evaluation reference answers are supplied for reproducible local grading; do not train on them when reporting held-out metrics.
-
-## Privacy and safety
-
-The public release omits literal IPs, hostnames, provider contacts, target addresses, credentials, raw payloads, captured commands, uploaded objects, secrets, and source-group mappings. It retains event timing and behavior summaries. Review your own policy before combining this dataset with other data.
-
-## Limitations
-
-It is a small, single-environment, short-duration dataset with weak deterministic labels. Distribution, timing, coverage, and labels should not be generalized to the internet. This is unsuitable as the only dataset for a security model or automated enforcement system.
-
+Literal addresses, geolocation, organizations, hostnames, credentials, commands, and raw payloads are excluded. Timing and behavior remain linkable to the public upstream source; full anonymization is not claimed. Re-identification and automated enforcement are inappropriate uses.

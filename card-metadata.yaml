@@ -1,6 +1,8 @@
 language:
 - en
-license: cc-by-4.0
+license:
+- cc-by-4.0
+- mit
 task_categories:
 - text-classification
 - text-generation
@@ -9,49 +11,73 @@ tags:
 - honeypot
 - weak-supervision
 size_categories:
-- n<1K
+- 100K<n<1M
 configs:
-- config_name: default
-  default: true
+- config_name: observations
   data_files:
   - split: train
-    path: data/chat/train.jsonl
+    path: data/observations/train.parquet
   - split: validation
-    path: data/chat/validation.jsonl
+    path: data/observations/validation.parquet
   - split: test
-    path: data/chat/test.jsonl
+    path: data/observations/test.parquet
+- config_name: observations_parquet
+  data_files:
+  - split: train
+    path: data/observations/train.parquet
+  - split: validation
+    path: data/observations/validation.parquet
+  - split: test
+    path: data/observations/test.parquet
+- config_name: evaluation
+  data_files:
+  - split: train
+    path: data/viewer/evaluation/train.parquet
+  - split: validation
+    path: data/viewer/evaluation/validation.parquet
+  - split: test
+    path: data/viewer/evaluation/test.parquet
+- config_name: default
+  data_files:
+  - split: train
+    path: data/viewer/default/train.parquet
+  - split: validation
+    path: data/viewer/default/validation.parquet
+  - split: test
+    path: data/viewer/default/test.parquet
+  default: true
 - config_name: alpaca
   data_files:
   - split: train
-    path: data/alpaca/train.jsonl
+    path: data/viewer/alpaca/train.parquet
   - split: validation
-    path: data/alpaca/validation.jsonl
+    path: data/viewer/alpaca/validation.parquet
   - split: test
-    path: data/alpaca/test.jsonl
+    path: data/viewer/alpaca/test.parquet
 - config_name: sharegpt
   data_files:
   - split: train
-    path: data/sharegpt/train.jsonl
+    path: data/viewer/sharegpt/train.parquet
   - split: validation
-    path: data/sharegpt/validation.jsonl
+    path: data/viewer/sharegpt/validation.parquet
   - split: test
-    path: data/sharegpt/test.jsonl
+    path: data/viewer/sharegpt/test.parquet
 - config_name: prompt_completion
   data_files:
   - split: train
-    path: data/prompt-completion/train.jsonl
+    path: data/viewer/prompt_completion/train.parquet
   - split: validation
-    path: data/prompt-completion/validation.jsonl
+    path: data/viewer/prompt_completion/validation.parquet
   - split: test
-    path: data/prompt-completion/test.jsonl
+    path: data/viewer/prompt_completion/test.parquet
 - config_name: events
   data_files:
   - split: train
-    path: data/events/train.jsonl
+    path: data/parquet/train.parquet
   - split: validation
-    path: data/events/validation.jsonl
+    path: data/parquet/validation.parquet
   - split: test
-    path: data/events/test.jsonl
+    path: data/parquet/test.parquet
 - config_name: events_parquet
   data_files:
   - split: train

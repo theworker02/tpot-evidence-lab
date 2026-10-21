@@ -1,0 +1,35 @@
+{
+  "upstream_rows": 132425,
+  "projection_duplicates_removed": 29,
+  "imported_observations": 132396,
+  "original_observations": 741,
+  "total_observations": 133137,
+  "imported_source_groups": 2460,
+  "split_sizes": {
+    "train": 89536,
+    "validation": 29376,
+    "test": 14225
+  },
+  "sensors": {
+    "Cowrie": 29115,
+    "Miniprint": 42,
+    "Ciscoasa": 107,
+    "Tanner": 127,
+    "Dionaea": 42185,
+    "Adbhoney": 53,
+    "Ipphoney": 7,
+    "Honeyaml": 18,
+    "Sentrypeer": 61353,
+    "RDPHoneypot": 46,
+    "H0neytr4p": 74,
+    "Redishoneypot": 4,
+    "Dicompot": 4,
+    "Medpot": 2
+  },
+  "corpora": {
+    "magnexis-local-2026": 741,
+    "cloud-honeynet-2025": 132396
+  },
+  "upstream_archive_md5": "9902cf514bcc9cf6983a28bf55c7526c",
+  "upstream_archive_sha256": "9703d532af9a9857a3d1c7a97c9607c8b9a84775ab92c50586826b1259f19b4d"
+}

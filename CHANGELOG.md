@@ -2,6 +2,14 @@
 
 All notable changes to T-Pot Evidence Lab are documented here.
 
+## 3.1.0 — 2026-10-21
+
+- Added 132,396 sanitized, attributed MIT-licensed cloud honeynet observations; 133,137 combined observations, 14 sensor types.
+- Added combined JSONL and Parquet viewer configurations, exposed all original formats and evaluation prompts, and fixed the namespace in loading examples.
+- Preserved original supervised data and labels; imported rows remain unlabelled.
+- Added pinned-source import tooling, provenance, license notices, schema documentation, exact counts, and a filterable real-data preview.
+- Fixed release-manifest self-inclusion and excluded Python/cache artifacts from manifest generation.
+
 ## 3.0.0 — 2026-10-20
 
 ### Added

@@ -1,0 +1,24 @@
+[
+  {
+    "corpus": "magnexis-local-2026",
+    "title": "Magnexis local T-Pot collection",
+    "license": "CC-BY-4.0",
+    "url": "https://huggingface.co/datasets/Magnexis/tpot-evidence-lab",
+    "rows": 741
+  },
+  {
+    "corpus": "cloud-honeynet-2025",
+    "title": "Multi-Regional Cloud Honeynet Dataset",
+    "license": "MIT",
+    "url": "https://zenodo.org/records/15716735",
+    "doi": "10.5281/zenodo.15716735",
+    "creators": [
+      "Enrique Feito-Casares",
+      "Ismael Gómez-Talal",
+      "José Luis Rojo-Álvarez"
+    ],
+    "rows": 132396,
+    "archive_md5": "9902cf514bcc9cf6983a28bf55c7526c",
+    "archive_sha256": "9703d532af9a9857a3d1c7a97c9607c8b9a84775ab92c50586826b1259f19b4d"
+  }
+]
