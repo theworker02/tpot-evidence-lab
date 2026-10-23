@@ -11,11 +11,22 @@
     <main>
       <p class="eyebrow">MAGNEXIS · DATA RELEASE</p>
       <h1>T-Pot Evidence Lab</h1>
-      <p class="lede">133,137 real honeypot observations. Structured for analysis, with traceable sources and a clear boundary between evidence and inference.</p>
+      <p class="lede">Honeypot observations and 12,066 defensive scenarios. Traceable sources, explicit uncertainty, and a clear boundary between evidence and inference.</p>
       <div class="actions">
         <a id="hf" class="primary" href="https://huggingface.co/datasets/Magnexis/tpot-evidence-lab/viewer/observations">Explore the full dataset</a>
-        <a id="gitlab" href="https://gitlab.com/theworker02/tpot-evidence-lab">Source and documentation</a>
+        <a id="gitlab" href="https://github.com/theworker02/tpot-evidence-lab">Source and documentation</a>
       </div>
+      <nav class="section-nav" aria-label="On this page"><a href="#scenarios">Defensive scenarios</a><a href="#observations">Observations</a><a href="#release">Release &amp; methods</a></nav>
+      <section id="scenarios">
+        <p class="eyebrow">VERSION 3.2.0 · RESEARCH DATA</p>
+        <h2>Inspect a defensive reasoning example.</h2>
+        <p>12,066 conversations: 1,100 local triage/review examples, 7,016 CISA KEV task variants, and 3,950 MITRE ATT&amp;CK mitigation/detection examples. Weak labels and recurring templates require human review. No model has been trained.</p>
+        <label for="scenario-task">Choose a task<select id="scenario-task" disabled><option>Loading examples…</option></select></label>
+        <p id="scenario-status" role="status" aria-live="polite">Loading bounded example preview…</p>
+        <h3>Input</h3><pre id="scenario-input">Loading…</pre>
+        <details><summary>Inspect the proposed response and uncertainty</summary><pre id="scenario-answer"></pre></details>
+        <p>These are actual release rows, one example per task. <a href="https://huggingface.co/datasets/Magnexis/tpot-evidence-lab/viewer/defensive_chat">Browse all defensive scenarios</a>.</p>
+      </section>
       <section>
         <h2>What’s inside</h2>
         <ul>
@@ -35,7 +46,7 @@
         <p class="note">Cloud source: Enrique Feito-Casares, Ismael Gómez-Talal, José Luis Rojo-Álvarez · Universidad Rey Juan Carlos. Identifiers and sensitive fields were removed; 29 identical projected rows were collapsed. Imported observations remain unlabelled.</p>
       </section>
       <section>
-        <p class="eyebrow">OBSERVATION PREVIEW</p><h2>Inspect the shape of the data.</h2>
+        <p id="observations" class="eyebrow">OBSERVATION PREVIEW</p><h2>Inspect the shape of the data.</h2>
         <p>Up to 20 real records per collection and sensor. Filters search this bounded preview. <a href="https://huggingface.co/datasets/Magnexis/tpot-evidence-lab/viewer/observations">Explore all rows on Hugging Face.</a></p>
         <form id="filters" role="search"><label>Search preview<input id="query" type="search" placeholder="Sensor, protocol, port, or ID"></label><label>Collection<select id="corpus"><option value="">All collections</option><option value="magnexis-local-2026">Magnexis local</option><option value="cloud-honeynet-2025">Cloud Honeynet</option></select></label><label>Sensor<select id="sensor"><option value="">All sensors</option></select></label><button type="reset">Reset</button></form>
         <p id="status" role="status" aria-live="polite">Loading observation preview…</p>
@@ -44,27 +55,31 @@
         <noscript><p>Enable JavaScript for the preview or open the full tables on Hugging Face.</p></noscript>
       </section>
       <section>
-        <h2>Choose the right configuration</h2>
+        <h2 id="release">Choose the right configuration</h2>
         <p><a href="https://huggingface.co/datasets/Magnexis/tpot-evidence-lab/viewer/observations_parquet">Combined Parquet observations</a> · <a href="https://huggingface.co/datasets/Magnexis/tpot-evidence-lab/viewer/events">Original detailed events</a> · <a href="https://huggingface.co/datasets/Magnexis/tpot-evidence-lab/viewer/chat">Original chat examples</a></p>
+        <p><a href="https://huggingface.co/datasets/Magnexis/tpot-evidence-lab/viewer/defensive_chat">Expanded defensive scenarios</a> · <a href="https://huggingface.co/datasets/Magnexis/tpot-evidence-lab/viewer/retained_events">Retained local events</a></p>
+        <p>9,229 / 1,413 / 1,424 conversational train / validation / test rows. Original and new snapshots overlap: do not add the counts or mix their evaluation splits. Local exact times are removed from the new configurations. Existing public observation times remain unchanged.</p>
         <pre><code>from datasets import load_dataset
 events = load_dataset("Magnexis/tpot-evidence-lab", "observations")
 print(events["train"][0])</code></pre>
       </section>
       <section>
-        <h2>Use responsibly</h2>
+        <h2>Methods, rights and responsible use</h2>
         <p>Original labels are weak deterministic thresholds. Imported rows have no fabricated answers. Neither establishes identity, intent, compromise, or botnet membership. Addresses, locations, credentials, commands, and raw payloads are excluded, but timing may still allow linkage with upstream records.</p>
         <p><a href="https://huggingface.co/datasets/Magnexis/tpot-evidence-lab/blob/main/docs/observations.md">Fields, methods, and limitations</a></p>
       </section>
-      <footer>Original collection: CC BY 4.0 · Imported collection: MIT · Version <span id="version"></span></footer>
+      <p><a href="https://github.com/theworker02/tpot-evidence-lab/blob/main/docs/defensive-dataset.md">New schema and label methodology</a> · <a href="https://github.com/theworker02/tpot-evidence-lab/blob/main/LICENSES.md">Source-specific licenses</a> · <a href="https://github.com/theworker02/tpot-evidence-lab/releases/tag/v3.2.0">Versioned release and checksums</a></p>
+      <footer>Magnexis: CC BY 4.0 · Cloud Honeynet: MIT · CISA: CC0 · MITRE: ATT&amp;CK license · Version <span id="version"></span></footer>
     </main>
     <script src="config.js"></script>
     <script>
       const config = window.TPOT_EVIDENCE_LAB;
       document.querySelector('#hf').href = config.huggingFaceUrl + '/viewer/observations';
-      document.querySelector('#gitlab').href = config.gitlabUrl;
+      document.querySelector('#gitlab').href = config.githubUrl;
       document.querySelector('#version').textContent = config.version;
     </script>
     <script src="explorer.js"></script>
+    <script src="scenarios.js"></script>
   </body>
 </html>
 
