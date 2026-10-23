@@ -5,6 +5,7 @@ from pathlib import Path
 import re
 import tempfile
 import unittest
+from urllib.parse import urlparse
 
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('defensive_import',ROOT/'tools/import_defensive_snapshot.py')
@@ -55,7 +56,11 @@ class DefensiveDatasetTest(unittest.TestCase):
         card=(ROOT/'README.md').read_text().split('---',2)[1].strip()
         metadata=(ROOT/'card-metadata.yaml').read_text().strip()
         self.assertEqual(card,metadata)
-        configs=yaml.safe_load(card)['configs']
+        parsed=yaml.safe_load(card)
+        link=urlparse(parsed['license_link'])
+        self.assertEqual(link.scheme,'https')
+        self.assertTrue(link.netloc)
+        configs=parsed['configs']
         self.assertEqual(next(c['config_name'] for c in configs if c.get('default')),'observations')
         for folder in ('defensive-chat','retained-events'):
             for split in ('train','validation','test'):

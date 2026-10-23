@@ -2,6 +2,11 @@
 
 All notable changes to T-Pot Evidence Lab are documented here.
 
+## 3.2.2 — 2026-10-23
+
+- Replaced the relative mixed-license card link with the absolute HTTPS URL required by Hugging Face; added metadata URL validation. The rejected upload published no files.
+- Dataset rows remain unchanged at data revision 3.2.0. GitHub package tags are retained; Hub distribution begins at this corrected package.
+
 ## 3.2.1 — 2026-10-23
 
 - Fixed cross-platform manifest key ordering and normalized the model template line endings. Added a deterministic-manifest regression test.

@@ -46,8 +46,8 @@ Before training: review and adjudicate a source-stratified sample, keep review o
 
 ```python
 from datasets import load_dataset
-chat = load_dataset('Magnexis/tpot-evidence-lab', 'defensive_chat', revision='v3.2.1')
-events = load_dataset('Magnexis/tpot-evidence-lab', 'retained_events', revision='v3.2.1')
+chat = load_dataset('Magnexis/tpot-evidence-lab', 'defensive_chat', revision='v3.2.2')
+events = load_dataset('Magnexis/tpot-evidence-lab', 'retained_events', revision='v3.2.2')
 print(chat['train'][0]['messages'])
 ```
 

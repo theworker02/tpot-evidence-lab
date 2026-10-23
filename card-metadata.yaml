@@ -2,7 +2,7 @@ language:
 - en
 license: other
 license_name: tpot-evidence-lab-mixed-source
-license_link: LICENSES.md
+license_link: https://github.com/theworker02/tpot-evidence-lab/blob/main/LICENSES.md
 task_categories:
 - text-classification
 - text-generation
