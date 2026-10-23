@@ -1,6 +1,6 @@
 # Versioning and release procedure
 
-`VERSION` is the release version. The card, citation, site configuration and defensive statistics must agree. Use semantic versions: patch for compatible corrections/documentation, minor for additive configurations/collections, major for changed schemas or label contracts in existing configurations. Never silently replace a tagged release; record corrections and affected versions in CHANGELOG.md.
+`VERSION` is the release version. The card loading revision, citation and site configuration must match the package version. Defensive statistics and row dataset_version identify the data revision, which can remain unchanged in a packaging-only patch. Use semantic versions: patch for compatible corrections/documentation, minor for additive configurations/collections, major for changed schemas or label contracts in existing configurations. Never silently replace a tagged release; record corrections and affected versions in CHANGELOG.md.
 
 Version 3.2.0 is additive. GitHub is the current source/release destination, GitHub Pages serves the inert site directory, and Hugging Face hosts dataset files and viewer configurations. The historical GitLab repository remains a provenance source; this release does not push there.
 

@@ -17,7 +17,7 @@ class DefensiveDatasetTest(unittest.TestCase):
         for split in ('train','validation','test'):
             for row in builder.read_rows(ROOT/f'data/defensive-chat/{split}.jsonl'):
                 self.assertEqual(row['split'],split)
-                self.assertEqual(row['dataset_version'],(ROOT/'VERSION').read_text().strip())
+                self.assertEqual(row['dataset_version'],stats['version'])
                 self.assertNotIn(row['id'],identifiers);identifiers.add(row['id'])
                 self.assertEqual(members.setdefault(row['group_id'],split),split)
                 self.assertEqual([m['role'] for m in row['messages']],['system','user','assistant'])

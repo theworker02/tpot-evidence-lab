@@ -27,8 +27,8 @@ def main():
     if bad:
         print("public-safety check failed: " + ", ".join(bad), file=sys.stderr)
         return 1
-    manifest = {"release": "tpot-evidence-lab-v" + (ROOT / "VERSION").read_text().strip(), "files": digests}
-    (ROOT / "release-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    manifest = {"release": "tpot-evidence-lab-v" + (ROOT / "VERSION").read_text().strip(), "files": {key:digests[key] for key in sorted(digests)}}
+    (ROOT / "release-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(f"verified {len(digests)} files; wrote release-manifest.json")
     return 0
 

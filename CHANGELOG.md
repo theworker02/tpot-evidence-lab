@@ -2,6 +2,11 @@
 
 All notable changes to T-Pot Evidence Lab are documented here.
 
+## 3.2.1 — 2026-10-23
+
+- Fixed cross-platform manifest key ordering and normalized the model template line endings. Added a deterministic-manifest regression test.
+- Release archives and the Hub publication use this corrected package; the initial v3.2.0 GitHub tag remains intact. Data rows retain dataset_version 3.2.0 because this patch changes packaging only.
+
 ## 3.2.0 — 2026-10-23
 
 - Added 12,066 defensive scenarios in `defensive_chat` and 24,401 sanitized records in `retained_events`, with canonical JSONL and equivalent Parquet.

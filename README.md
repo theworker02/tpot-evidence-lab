@@ -116,7 +116,7 @@ configs:
   <a href="https://github.com/theworker02/tpot-evidence-lab"><img src="https://img.shields.io/badge/GitHub-Repository-24292f?logo=github&logoColor=white" alt="GitHub Repository"></a>
   <a href="https://theworker02.github.io/tpot-evidence-lab/"><img src="https://img.shields.io/badge/GitHub%20Pages-Live-4285f4?logo=gitlab&logoColor=white" alt="GitHub Pages"></a>
   <a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY%204.0-6b4e9b" alt="CC BY 4.0 License"></a>
-  <img src="https://img.shields.io/badge/Release-v3.2.0-173f5f" alt="Release v3.2.0">
+  <img src="https://img.shields.io/badge/Release-v3.2.1-173f5f" alt="Release v3.2.1">
 </p>
 
 **A sanitized, weakly labelled honeypot-evidence dataset for defensive-security research, local model evaluation, and training-pipeline prototyping.**
@@ -131,8 +131,8 @@ The new scenarios include 1,090 local T-Pot summaries, ten uncertain IDS-signatu
 
 ```python
 from datasets import load_dataset
-chat = load_dataset("Magnexis/tpot-evidence-lab", "defensive_chat", revision="v3.2.0")
-events = load_dataset("Magnexis/tpot-evidence-lab", "retained_events", revision="v3.2.0")
+chat = load_dataset("Magnexis/tpot-evidence-lab", "defensive_chat", revision="v3.2.1")
+events = load_dataset("Magnexis/tpot-evidence-lab", "retained_events", revision="v3.2.1")
 ```
 
 See [schemas, labels, split limits and methodology](docs/defensive-dataset.md), [source-specific licenses](LICENSES.md), [release history](CHANGELOG.md), and [validation](VALIDATION.md). This is a research data release; no model has been trained and the expanded scenarios are not an independently validated benchmark. The default `observations` configuration remains unchanged.
