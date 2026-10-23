@@ -1,0 +1,25 @@
+name: Verify dataset release
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Prepare validation environment
+        run: |
+          python3 -m venv .venv
+          .venv/bin/pip install -r requirements-validation.txt
+      - name: Verify data, import boundaries and local endpoint contracts
+        run: .venv/bin/python -m unittest discover -s tests -p 'test_*.py'
+      - name: Verify site behavior
+        run: |
+          node tests/test_preview.cjs
+          node tests/test_scenarios.cjs
+      - name: Verify public release inventory
+        run: |
+          .venv/bin/python tools/verify_release.py
+          git diff --exit-code release-manifest.json

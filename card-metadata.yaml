@@ -1,8 +1,8 @@
 language:
 - en
-license:
-- cc-by-4.0
-- mit
+license: other
+license_name: tpot-evidence-lab-mixed-source
+license_link: LICENSES.md
 task_categories:
 - text-classification
 - text-generation
@@ -86,3 +86,19 @@ configs:
     path: data/parquet/validation.parquet
   - split: test
     path: data/parquet/test.parquet
+- config_name: defensive_chat
+  data_files:
+  - split: train
+    path: data/defensive-chat/train.parquet
+  - split: validation
+    path: data/defensive-chat/validation.parquet
+  - split: test
+    path: data/defensive-chat/test.parquet
+- config_name: retained_events
+  data_files:
+  - split: train
+    path: data/retained-events/train.parquet
+  - split: validation
+    path: data/retained-events/validation.parquet
+  - split: test
+    path: data/retained-events/test.parquet

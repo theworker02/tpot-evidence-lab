@@ -18,3 +18,13 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+## CISA KEV additions (v3.2)
+
+Source: cisagov/kev-data, CC0-1.0. Revision, URL and input SHA-256 are pinned in defensive-statistics.json. Full license: licenses/cisa-kev.LICENSE.txt. Local tasks are derivative framing; source due dates do not automatically apply to every organization.
+
+## MITRE ATT&CK additions (v3.2)
+
+© 2026 The MITRE Corporation. This work is reproduced and distributed with the permission of The MITRE Corporation.
+
+Source: mitre-attack/attack-stix-data, pinned in defensive-statistics.json. Full royalty-free ATT&CK license and disclaimers: licenses/mitre-enterprise.LICENSE.txt. Preserve that license and copyright with copies. The CC BY and MIT licenses for other collections do not relicense ATT&CK text. Technique similarity is not attribution; listed defenses do not guarantee coverage.

@@ -14,7 +14,7 @@ def main():
     bad = []
     digests = {}
     for path in sorted(ROOT.rglob("*")):
-        if not path.is_file() or any(part in path.parts for part in (".git", "__pycache__", ".cache")) or path.name == "release-manifest.json":
+        if not path.is_file() or any(part in path.parts for part in (".git", "__pycache__", ".cache", ".venv")) or path.name == "release-manifest.json":
             continue
         relative = path.relative_to(ROOT).as_posix()
         content = path.read_bytes()
@@ -27,7 +27,7 @@ def main():
     if bad:
         print("public-safety check failed: " + ", ".join(bad), file=sys.stderr)
         return 1
-    manifest = {"release": "tpot-evidence-lab-v3.1", "files": digests}
+    manifest = {"release": "tpot-evidence-lab-v" + (ROOT / "VERSION").read_text().strip(), "files": digests}
     (ROOT / "release-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     print(f"verified {len(digests)} files; wrote release-manifest.json")
     return 0

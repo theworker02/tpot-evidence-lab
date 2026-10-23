@@ -1,0 +1,76 @@
+{
+  "version": "3.2.0",
+  "schema_version": "1.0.0",
+  "scenarios": 12066,
+  "splits": {
+    "train": 9229,
+    "validation": 1413,
+    "test": 1424
+  },
+  "scenario_sources": {
+    "local_tpot": 1090,
+    "local_suricata": 10,
+    "cisa_kev": 7016,
+    "mitre_attack": 3950
+  },
+  "tasks": {
+    "triage_repeat_abuse": 1090,
+    "avoid_signature_overclaim": 10,
+    "prioritize_known_exploited_vulnerability": 1754,
+    "avoid_kev_overclaim": 1754,
+    "verify_remediation": 1754,
+    "draft_internal_ticket": 1754,
+    "plan_defensive_mitigation": 1477,
+    "plan_detection_and_tuning": 2473
+  },
+  "retained_events": 24401,
+  "event_splits": {
+    "train": 23962,
+    "test": 142,
+    "validation": 297
+  },
+  "signature_review": 10,
+  "public_sources": [
+    {
+      "name": "cisa-kev.json",
+      "repository": "cisagov/kev-data",
+      "revision": "fd12990e9c566a1ad3060e1a2073129778f438cc",
+      "url": "https://raw.githubusercontent.com/cisagov/kev-data/fd12990e9c566a1ad3060e1a2073129778f438cc/known_exploited_vulnerabilities.json",
+      "sha256": "ef8fffede5c472001da046c7751beb2a3242458896d0ce08da52b30968b8b56b",
+      "license_id": "CC0-1.0",
+      "license_url": "https://raw.githubusercontent.com/cisagov/kev-data/fd12990e9c566a1ad3060e1a2073129778f438cc/LICENSE",
+      "license_file": "cisa-kev.LICENSE.txt",
+      "retrieved_at": "2026-10-23T11:09:49.665445+00:00",
+      "bytes": 1803428
+    },
+    {
+      "name": "mitre-enterprise.json",
+      "repository": "mitre-attack/attack-stix-data",
+      "revision": "c2494b29dd268c46a5d0ea0990553e4327cd2253",
+      "url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/c2494b29dd268c46a5d0ea0990553e4327cd2253/enterprise-attack/enterprise-attack.json",
+      "sha256": "81113ba98afa2928f3dcff62022539f7ce30c315c32e14422f11ff95ce534352",
+      "license_id": "LicenseRef-MITRE-ATTACK",
+      "license_url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/c2494b29dd268c46a5d0ea0990553e4327cd2253/LICENSE.txt",
+      "license_file": "mitre-enterprise.LICENSE.txt",
+      "retrieved_at": "2026-10-23T11:09:51.949912+00:00",
+      "bytes": 55271014
+    }
+  ],
+  "source_snapshot_data_digests": {
+    "data/events.jsonl": "7d1c6810a484b8f49f15029dd0855be8f6aaf48fe8816e691f2740f8d7f73eb3",
+    "data/signature_review.jsonl": "791954eaa478a2bd8cd2a28cf396f1c7fe5368558f5cd9d11bf8102d4c266c99",
+    "data/test.jsonl": "e987a90a1979712a30ee7a6f79b1a00fad6a700d63fd25dc17993fc2b0d7a7ba",
+    "data/train.jsonl": "5bc3e058ec5f5437839c39223495344fae62b186794ac87793086670765447bc",
+    "data/validation.jsonl": "4b417197b3ff8138a8dffcac47544df24f8cee91e2b16b9ea746cc34574d4ef9"
+  },
+  "label_status": "Weak rule-derived/template-authored labels; human adjudication pending",
+  "privacy_transform": "Local absolute timestamps replaced by snapshot-relative offsets; event IDs regenerated from sanitized fields; no source mapping exported",
+  "cross_version_overlap": "Unknown; do not concatenate local v3.0 and v3.2 data for independent evaluation",
+  "reporting_policy": {
+    "minimum_abuse_records": 2,
+    "abuse_time_limit_seconds": null,
+    "scan_ports": 5,
+    "scan_window_seconds": 300,
+    "delivery_cooldown_seconds": 86400
+  }
+}

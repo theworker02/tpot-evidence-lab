@@ -41,3 +41,9 @@ button:disabled { opacity: .4; cursor: default; }
 pre { background: #0b1017; padding: 22px; border-left: 2px solid #a9caff; overflow-x: auto; color: #dce8ff; font-size: 13px; }
 @media(max-width:600px) { main { width: calc(100% - 28px); padding: 36px 0; } h2 { font-size: 1.25rem; } select { max-width: 220px; } }
 @media(prefers-reduced-motion:reduce) { * { scroll-behavior: auto !important; } }
+
+.section-nav { display:flex; flex-wrap:wrap; gap:24px; margin:0 0 30px; font-size:14px; }
+#scenario-task { max-width:100%; width:min(620px,100%); }
+#scenario-input, #scenario-answer { white-space:pre-wrap; overflow-wrap:anywhere; max-height:500px; overflow-y:auto; line-height:1.65; }
+summary { cursor:pointer; padding:14px 0; color:#a9caff; }
+summary:focus-visible { outline:2px solid #a9caff; }
